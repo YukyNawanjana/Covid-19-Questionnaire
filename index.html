@@ -9,27 +9,30 @@
 </head>
 <body>
    
-    <div class="container">
+    <div class="container-fluid" style="height:100vh;">
         <div class="row">
             <div class="col-10 mx-auto my-5">
-                <div class="p-3 card border-danger mb-3 d-flex justify-content-center align-items-center" style="height: 80vh;">
-                    <img src="./virus.svg" style="width: 3rem;" alt="">
-                    <h2 class="text-danger mt-2">Covid-19</h2>
-                    <div class="card-body text-primary">
-                      <h5 class="card-title">How Much Safe Are You ?</h5>
-                      <div class="input-group flex-nowrap">
+                <div class="card d-flex align-items-center p-5">
+                    <h1 class="text-danger">Covid-19</h1>
+                    <p class="text-secondary">Questionnaire App</p>
+                    <h5 class="card-title">How Much Safe Are You?</h5>
+                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_wv4mTG.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                    <div class="card-body text-center">
+                      
+                      <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="addon-wrapping"><i class="fas fa-user"></i></span>
+                          <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Enter Your Name" >
+                        <input type="text" class="form-control" placeholder="Enter Your Name" id="name">
                       </div>
-
+                      <a href="#" class="btn btn-primary btn-block text-uppercase font-weight-bold">Start</a>
                     </div>
-                    <button class="btn btn-primary btn-block">Start</button>
                 </div>
             </div>
         </div>
     </div>
+   
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
