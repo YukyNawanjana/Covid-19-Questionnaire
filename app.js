@@ -42,6 +42,8 @@ const quizData = [
 
 ];
 const startBtn = document.getElementById('startBtn');
+const cardBody = document.querySelector('.card-body');
+const cardQuiz= document.querySelector('.card-quiz ');
 const name = document.getElementById('name');
 const alert = document.querySelector('.alert');
 const answerEls = document.querySelectorAll('.answer');
@@ -59,7 +61,8 @@ let score = 0;
 
 startBtn.addEventListener('click', ()=>{
     if(name.value){
-    
+        cardBody.classList.add('d-none');
+        cardQuiz.classList.remove('d-none');
     }else{
         alert.classList.remove('d-none');
         alert.innerHTML = `<strong>Please Enter your Name</strong>`;

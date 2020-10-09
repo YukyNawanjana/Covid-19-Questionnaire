@@ -6,7 +6,9 @@
     <title>Covid-19 Questionnaire</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-</head>
+
+    
+  </head>
 <body style=" height: 100vh;" class="d-flex align-items-center">
    
     <div class="container">
@@ -19,8 +21,8 @@
                     <h1 class="text-danger">Covid-19</h1>
                     <p class="text-secondary">Questionnaire App</p>
                     <h5 class="card-title text-center">How Much Safe Are You?</h5>
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_wv4mTG.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop autoplay></lottie-player>
                     <div class="card-body text-center">
+                      <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_wv4mTG.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop autoplay></lottie-player>
                       
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -28,7 +30,25 @@
                         </div>
                         <input type="text" class="form-control" placeholder="Enter Your Name" id="name">
                       </div>
+                      
                       <a href="#" class="btn btn-primary btn-block text-uppercase font-weight-bold" id="startBtn">Start</a>
+                    </div>
+                    <div class="card-quiz d-none">
+                      <div class="quiz-container d-flex flex-column justify-content-center align-items-center">
+                        <img src="./virus.svg" class="img-fluid" width="50px" alt="">
+                        <h3>How old is floring?</h3>
+                        <div class="div">
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
+                            <label class="custom-control-label" for="defaultInline2">No</label>
+                          </div>
+
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
+                            <label class="custom-control-label" for="defaultInline3">Yes</label>
+                          </div>
+                        </div>  
+                      </div>
                     </div>
                 </div>
             </div>
