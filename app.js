@@ -127,8 +127,62 @@ submitBtn.addEventListener('click', ()=>{
             loadQuiz();
         }else{
             // TODO Show Results
-            cardQuiz.innerHTML = `<h2>Your anser corectly ${score}/${quizData.length} questions</h2><button onClick="location.reload()">Reload</button>`;
+            const percentage = Math.round( score * 12.5 );
+            cardQuiz.innerHTML = `<h2>Your anser corectly ${score}/${quizData.length} questions</h2><button onClick="location.reload()">Reload</button>
+                                    <!-- Progress bar 1 -->
+                                    <div class="progress mx-auto" data-value='${percentage}'>
+                                    <span class="progress-left">
+                                                    <span class="progress-bar border-primary"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                                    <span class="progress-bar border-primary"></span>
+                                    </span>
+                                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                        <div class="h2 font-weight-bold">${percentage}<sup class="small">%</sup></div>
+                                    </div>
+                                    </div>
+                                <!-- END -->
+            `;
+
+                // Present tage
+
+                $(function() {
+
+                    $(".progress").each(function() {
+                
+                    var value = $(this).attr('data-value');
+                    var left = $(this).find('.progress-left .progress-bar');
+                    var right = $(this).find('.progress-right .progress-bar');
+                
+                    if (value > 0) {
+                        if (value <= 50) {
+                        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+                        } else {
+                        right.css('transform', 'rotate(180deg)')
+                        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+                        }
+                    }
+                
+                    })
+                
+                    function percentageToDegrees(percentage) {
+                
+                    return percentage / 100 * 360
+                
+                    }
+                
+                });
         }
+    }else{
+        alert.classList.remove('d-none');
+        alert.innerHTML = `<strong>Please Select Answer</strong>`;
+
+        setTimeout(()=>{
+            alert.classList.add('d-none');
+        }, 2000);
     }    
     
 });
+
+
+
