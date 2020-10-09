@@ -76,7 +76,7 @@ startBtn.addEventListener('click', ()=>{
 
         setTimeout(()=>{
             alert.classList.add('d-none');
-        }, 2000)
+        }, 2000);
     }
 })
 
@@ -88,32 +88,33 @@ function loadQuiz(){
     question.innerHTML = currentQuizData.question;
     a_text.innerHTML = currentQuizData.a;
     b_text.innerHTML = currentQuizData.b; 
+    getSelected();
+    
 }
 
 function deselectAnswers(){
     answerEls.forEach((answerEl) =>{
         answerEl.checked = false;
     });
-
 }
 
-function getSelected(){
-   
 
-    let answer = undefined
+function getSelected(){
+    let answer = undefined;
     answerEls.forEach((answerEl) =>{
         if(answerEl.checked){
             answer =  answerEl.id;
         }
     });
-
     return answer;
 }
 
-submitBtn.addEventListener('click', ()=>{
-    const answer = getSelected();
 
-    console.log(answer);
+
+submitBtn.addEventListener('click', ()=>{
+    
+    const answer = getSelected();
+    //console.log(answer);
     if(answer){
         if(answer === quizData[currentQuiz].correct){
             score++;
@@ -126,6 +127,13 @@ submitBtn.addEventListener('click', ()=>{
             // TODO Show Results
             //quiz.innerHTML = `<h2>Your anser corectly ${score}/${quizData.length} questions</h2><button onClick="location.reload()">Reload</button>`;
         }
-    }    
+    }else{
+        alert.classList.remove('d-none');
+        alert.innerHTML = `<strong>Please Select Answer</strong>`;
+
+        setTimeout(()=>{
+            alert.classList.add('d-none');
+        }, 2000);
+    }   
     
 });
