@@ -50,7 +50,7 @@ const quizData = [
 
 ];
 const startBtn = document.getElementById('startBtn');
-const cardBody = document.querySelector('.card-body');
+const cardBody = document.querySelector('.cardBody');
 const cardQuiz= document.querySelector('.card-quiz ');
 const name = document.getElementById('name');
 const alert = document.querySelector('.alert');
