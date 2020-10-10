@@ -1,48 +1,56 @@
 const quizData = [
     {
         question: 'Do you have a fever?',
+        img:'./images/fever.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Are you close contact with sick people?',
+        img:'./images/fever.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Do you wash your hands often?',
+        img:'images/face-mask.png',
         a: 'Yes',
         b: 'No',
         correct: 'a'
     },
     {
         question: 'Do you using a face mask?',
+        img:'images/face-mask.png',
         a: 'Yes',
         b: 'No',
         correct: 'a'
     },
     {
         question: 'Do you have any immune disease?',
+        img:'images/face-mask.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Do you ofthen touch your face?',
+        img:'images/face-mask.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Are you coughing?',
+        img:'images/face-mask.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Are you travel during lockdown period?',
+        img:'./images/face-mask.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
@@ -52,6 +60,7 @@ const quizData = [
 const startBtn = document.getElementById('startBtn');
 const cardBody = document.querySelector('.cardBody');
 const cardQuiz= document.querySelector('.card-quiz ');
+const quixImage = document.getElementById('quiz-img');
 const name = document.getElementById('name');
 const alert = document.querySelector('.alert');
 const answerEls = document.querySelectorAll('.answer');
@@ -85,6 +94,7 @@ function loadQuiz(){
     const currentQuizData = quizData[currentQuiz];
 
     question.innerHTML = currentQuizData.question;
+    quixImage.src = currentQuizData.img;
     a_text.innerHTML = currentQuizData.a;
     b_text.innerHTML = currentQuizData.b; 
     getSelected();
@@ -128,9 +138,13 @@ submitBtn.addEventListener('click', ()=>{
         }else{
             // TODO Show Results
             const percentage = Math.round( score * 12.5 );
-            cardQuiz.innerHTML = `<h2>Hello ${name.value}! . Your anser corectly ${score}/${quizData.length} questions</h2><button onClick="location.reload()">Reload</button>
+            cardQuiz.innerHTML = `<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_nKCnOy.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>`;
+            setTimeout(()=>{
+
+                cardQuiz.innerHTML = `
+                                    <lottie-player class="mx-auto" src="https://assets2.lottiefiles.com/private_files/lf30_hTBwWJ.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
                                     <!-- Progress bar 1 -->
-                                    <div class="progress mx-auto" data-value='${percentage}'>
+                                    <div class="progress mx-auto my-3" data-value='${percentage}'>
                                     <span class="progress-left">
                                                     <span class="progress-bar border-primary"></span>
                                     </span>
@@ -141,7 +155,9 @@ submitBtn.addEventListener('click', ()=>{
                                         <div class="h2 font-weight-bold">${percentage}<sup class="small">%</sup></div>
                                     </div>
                                     </div>
-                                <!-- END -->
+                                    <!-- END -->
+                                    <h6 class="text-center mt-5 mb-2">Hello <span class="text-primary text-uppercase">${name.value}</span> You are ${percentage}% safe </h6>
+                                    <button onClick="location.reload()" class="btn btn-info btn-block align-self-center my-4">Reload</button>
             `;
 
                 // Present tage
@@ -172,6 +188,9 @@ submitBtn.addEventListener('click', ()=>{
                     }
                 
                 });
+
+            }, 4000);
+            
         }
     }else{
         alert.classList.remove('d-none');
