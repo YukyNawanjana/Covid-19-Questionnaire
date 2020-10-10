@@ -128,7 +128,7 @@ submitBtn.addEventListener('click', ()=>{
         }else{
             // TODO Show Results
             const percentage = Math.round( score * 12.5 );
-            cardQuiz.innerHTML = `<h2>Your anser corectly ${score}/${quizData.length} questions</h2><button onClick="location.reload()">Reload</button>
+            cardQuiz.innerHTML = `<h2>Hello ${name.value}! . Your anser corectly ${score}/${quizData.length} questions</h2><button onClick="location.reload()">Reload</button>
                                     <!-- Progress bar 1 -->
                                     <div class="progress mx-auto" data-value='${percentage}'>
                                     <span class="progress-left">
