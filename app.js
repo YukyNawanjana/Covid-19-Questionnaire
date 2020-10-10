@@ -138,11 +138,15 @@ submitBtn.addEventListener('click', ()=>{
         }else{
             // TODO Show Results
             const percentage = Math.round( score * 12.5 );
-            cardQuiz.innerHTML = `<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_nKCnOy.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>`;
+            cardQuiz.innerHTML = `
+                                <div class="d-flex justify-content-center  align-items-center" style="height:30vh;">
+                                    <div class="lds-facebook"><div></div><div></div><div></div></div>
+                                </div>
+            `;
             setTimeout(()=>{
 
                 cardQuiz.innerHTML = `
-                                    <lottie-player class="mx-auto" src="https://assets2.lottiefiles.com/private_files/lf30_hTBwWJ.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
+                                    <lottie-player class="mx-auto" src="https://assets5.lottiefiles.com/packages/lf20_nKCnOy.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
                                     <!-- Progress bar 1 -->
                                     <div class="progress mx-auto my-3" data-value='${percentage}'>
                                     <span class="progress-left">
@@ -189,7 +193,7 @@ submitBtn.addEventListener('click', ()=>{
                 
                 });
 
-            }, 4000);
+            }, 3000);
             
         }
     }else{
