@@ -148,7 +148,7 @@ submitBtn.addEventListener('click', ()=>{
                 cardQuiz.innerHTML = `
                                     <lottie-player class="mx-auto" src="https://assets5.lottiefiles.com/packages/lf20_nKCnOy.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
                                     <!-- Progress bar 1 -->
-                                    <div class="progress mx-auto my-3" data-value='${percentage}'>
+                                    <div class="progress mx-auto my-3 text-primary" data-value='${percentage}'>
                                     <span class="progress-left">
                                                     <span class="progress-bar border-primary"></span>
                                     </span>
@@ -156,7 +156,7 @@ submitBtn.addEventListener('click', ()=>{
                                                     <span class="progress-bar border-primary"></span>
                                     </span>
                                     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                        <div class="h2 font-weight-bold">${percentage}<sup class="small">%</sup></div>
+                                        <div class="h2 font-weight-bold text-primary">${percentage}<sup class="small">%</sup></div>
                                     </div>
                                     </div>
                                     <!-- END -->
