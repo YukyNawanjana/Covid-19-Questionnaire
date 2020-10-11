@@ -147,7 +147,6 @@ submitBtn.addEventListener('click', ()=>{
             setTimeout(()=>{
 
                 cardQuiz.innerHTML = `
-                                    <lottie-player class="mx-auto" src="https://assets5.lottiefiles.com/packages/lf20_nKCnOy.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
                                     <!-- Progress bar 1 -->
                                     <div class="progress mx-auto my-3" data-value='${percentage}'>
                                     <span class="progress-left">
