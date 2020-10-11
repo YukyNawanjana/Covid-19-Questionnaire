@@ -8,14 +8,14 @@ const quizData = [
     },
     {
         question: 'Are you close contact with sick people?',
-        img:'./images/fever.png',
+        img:'./images/team.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Do you wash your hands often?',
-        img:'images/face-mask.png',
+        img:'images/hand-wash.png',
         a: 'Yes',
         b: 'No',
         correct: 'a'
@@ -29,28 +29,28 @@ const quizData = [
     },
     {
         question: 'Do you have any immune disease?',
-        img:'images/face-mask.png',
+        img:'images/antibiotic.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Do you ofthen touch your face?',
-        img:'images/face-mask.png',
+        img:'images/no-touch.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Are you coughing?',
-        img:'images/face-mask.png',
+        img:'images/cough.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
     },
     {
         question: 'Are you travel during lockdown period?',
-        img:'./images/face-mask.png',
+        img:'./images/traveller.png',
         a: 'Yes',
         b: 'No',
         correct: 'b'
@@ -138,6 +138,7 @@ submitBtn.addEventListener('click', ()=>{
         }else{
             // TODO Show Results
             const percentage = Math.round( score * 12.5 );
+            
             cardQuiz.innerHTML = `
                                 <div class="d-flex justify-content-center  align-items-center" style="height:30vh;">
                                     <div class="lds-facebook"><div></div><div></div><div></div></div>
@@ -148,7 +149,7 @@ submitBtn.addEventListener('click', ()=>{
                 cardQuiz.innerHTML = `
                                     <lottie-player class="mx-auto" src="https://assets5.lottiefiles.com/packages/lf20_nKCnOy.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
                                     <!-- Progress bar 1 -->
-                                    <div class="progress mx-auto my-3 text-primary" data-value='${percentage}'>
+                                    <div class="progress mx-auto my-3" data-value='${percentage}'>
                                     <span class="progress-left">
                                                     <span class="progress-bar border-primary"></span>
                                     </span>
