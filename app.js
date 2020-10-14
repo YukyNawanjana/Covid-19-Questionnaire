@@ -174,7 +174,9 @@ submitBtn.addEventListener('click', ()=>{
                                     </div>
                                     </div>
                                     <!-- END -->
-                                    <h6 class="text-center mt-5 mb-2">Hello <span class="text-primary text-uppercase">${name.value}</span> You are ${percentage}% safe </h6>
+                                    <div class="alert alert-primary text-center mt-5 mb-2" role="alert">
+                                        Hello <span class="text-primary text-uppercase">${name.value}</span> You are ${percentage}% safe 
+                                    </div>
                                     <button onClick="location.reload()" class="btn btn-info btn-block align-self-center my-4">Reload</button>
                                     `;
 
