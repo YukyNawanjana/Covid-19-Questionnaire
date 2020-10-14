@@ -164,10 +164,10 @@ submitBtn.addEventListener('click', ()=>{
                                     <!-- Progress bar 1 -->
                                     <div class="progress mx-auto my-3" data-value='${percentage}'>
                                     <span class="progress-left">
-                                                    <span class="progress-bar border-primary"></span>
+                                                    <span class="progress-bar border-${color}"></span>
                                     </span>
                                     <span class="progress-right">
-                                                    <span class="progress-bar border-primary"></span>
+                                                    <span class="progress-bar border-${color}"></span>
                                     </span>
                                     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                                         <div class="h2 font-weight-bold text-${color}">${percentage}<sup class="small">%</sup></div>
