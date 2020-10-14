@@ -126,7 +126,7 @@ function deselectAnswers(){
 submitBtn.addEventListener('click', ()=>{
     const answer = getSelected();
 
-    console.log(answer);
+    
     if(answer){
         if(answer === quizData[currentQuiz].correct){
             score++;
@@ -138,6 +138,20 @@ submitBtn.addEventListener('click', ()=>{
         }else{
             // TODO Show Results
             const percentage = Math.round( score * 12.5 );
+
+            // check colors
+            
+            let color;
+
+            if(percentage >= 75){
+                color = 'primary';
+            }else if( percentage >= 50){
+                color = 'success';
+            }else{
+                color = 'danger';
+            }
+
+
             
             cardQuiz.innerHTML = `
                                 <div class="d-flex justify-content-center  align-items-center" style="height:30vh;">
@@ -156,13 +170,13 @@ submitBtn.addEventListener('click', ()=>{
                                                     <span class="progress-bar border-primary"></span>
                                     </span>
                                     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                        <div class="h2 font-weight-bold text-primary">${percentage}<sup class="small">%</sup></div>
+                                        <div class="h2 font-weight-bold text-${color}">${percentage}<sup class="small">%</sup></div>
                                     </div>
                                     </div>
                                     <!-- END -->
                                     <h6 class="text-center mt-5 mb-2">Hello <span class="text-primary text-uppercase">${name.value}</span> You are ${percentage}% safe </h6>
                                     <button onClick="location.reload()" class="btn btn-info btn-block align-self-center my-4">Reload</button>
-            `;
+                                    `;
 
                 // Present tage
 
@@ -196,6 +210,7 @@ submitBtn.addEventListener('click', ()=>{
             }, 3000);
             
         }
+        
     }else{
         alert.classList.remove('d-none');
         alert.innerHTML = `<strong>Please Select Answer</strong>`;
